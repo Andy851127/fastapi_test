@@ -4,7 +4,7 @@ from fastapi import Request
 from starlette.middleware.base import BaseHTTPMiddleware
 
 # 配置日志
-logging.basicConfig(level=logging.INFO, filename='api_logs.log', filemode='a',
+logging.basicConfig(level=logging.INFO, filename='./app/log/api_logs.log', filemode='a',
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
 class LoggingMiddleware(BaseHTTPMiddleware):
