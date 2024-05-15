@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from .routers import blog
-from .database import engine
-from . import models
+from .model.database import engine
+from .model import models
 from .log.logging_middleware import LoggingMiddleware
 
 app = FastAPI()
