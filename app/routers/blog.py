@@ -12,8 +12,8 @@ router = APIRouter(
 def create_blog(blog: schemas.BlogCreate, db: Session = Depends(database.get_db)):
     return crud.Blog.create_blog(db=db, blog=blog)
 
-@router.get("/blogs/", response_model=list[schemas.Blog])
-def read_blogs(skip: int = 0, limit: int = 10, db: Session = Depends(database.get_db)):
+@router.get("/blogs/", response_description = "所有的 blogs 資料", response_model=list[schemas.Blog])
+def get_all_blogs(skip: int = 0, limit: int = 10, db: Session = Depends(database.get_db)):
     blogs = crud.Blog.get_blogs(db, skip=skip, limit=limit)
     return blogs
 
