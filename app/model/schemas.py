@@ -16,3 +16,20 @@ class Blog(BlogBase):
 
     class Config:
         from_attributes = True
+
+
+class UsersBase(BaseModel):
+    user_id: int
+    user_name: str
+    email: str
+
+class UserCreate(UsersBase):
+    pass
+
+class Users(UsersBase):
+    id: int
+    created_at: datetime
+    updated_at: datetime
+
+    class Config:
+        from_attributes = True
